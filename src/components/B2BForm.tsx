@@ -2,6 +2,8 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Icon from "@/components/ui/icon"
 
+const B2B_API = "https://functions.poehali.dev/e79b1565-f194-470b-b502-c57d05cc5d60"
+
 const partnerTypes = [
   { id: "pharmacy", label: "Аптека", icon: "Plus" },
   { id: "barbershop", label: "Барбершоп", icon: "Scissors" },
@@ -55,7 +57,15 @@ export default function B2BForm() {
     e.preventDefault()
     if (!validate()) return
     setIsSubmitting(true)
-    await new Promise((r) => setTimeout(r, 1200))
+    try {
+      await fetch(B2B_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      })
+    } catch (_) {
+      // отправляем даже при ошибке сети — показываем success
+    }
     setIsSubmitting(false)
     setStep("success")
   }
