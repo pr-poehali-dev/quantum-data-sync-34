@@ -1,47 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Bebas+Neue&family=Open+Sans:wght@300;400;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 5%;
-    --foreground: 0 0% 98%;
+    /* DELINA LAB — глубокий зелёный фон */
+    --background: 120 30% 8%;
+    --foreground: 45 30% 95%;
 
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 98%;
+    --card: 120 25% 11%;
+    --card-foreground: 45 30% 95%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 120 25% 11%;
+    --popover-foreground: 45 30% 95%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 5%;
+    /* Золото как primary */
+    --primary: 43 65% 52%;
+    --primary-foreground: 120 30% 8%;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 120 20% 18%;
+    --secondary-foreground: 45 30% 95%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 120 20% 15%;
+    --muted-foreground: 45 15% 65%;
 
-    --accent: 0 0% 25%;
-    --accent-foreground: 0 0% 98%;
+    /* Золотой акцент */
+    --accent: 43 65% 52%;
+    --accent-foreground: 120 30% 8%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 0% 80%;
+    --border: 120 20% 20%;
+    --input: 120 20% 20%;
+    --ring: 43 65% 52%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 8%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 0 0% 98%;
-    --sidebar-primary-foreground: 0 0% 5%;
-    --sidebar-accent: 0 0% 15%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 0 0% 80%;
+    /* Фирменные переменные */
+    --delina-green: #2d5016;
+    --delina-green-deep: #1a2f0d;
+    --delina-gold: #d4af37;
+    --delina-gold-light: #e8c84a;
+    --delina-beige: #f5f0e8;
+
+    --sidebar-background: 120 25% 8%;
+    --sidebar-foreground: 45 30% 95%;
+    --sidebar-primary: 43 65% 52%;
+    --sidebar-primary-foreground: 120 30% 8%;
+    --sidebar-accent: 120 20% 15%;
+    --sidebar-accent-foreground: 45 30% 95%;
+    --sidebar-border: 120 20% 20%;
+    --sidebar-ring: 43 65% 52%;
   }
 }
 
@@ -53,7 +65,9 @@
     box-sizing: border-box;
   }
 
-  html, body, #root {
+  html,
+  body,
+  #root {
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -61,10 +75,17 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Montserrat', system-ui, sans-serif;
+    font-family: "Montserrat", system-ui, sans-serif;
+    background: linear-gradient(135deg, #0d1f06 0%, #1a3009 50%, #0d1f06 100%);
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'PT Serif', Georgia, serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Bebas Neue", "Montserrat", sans-serif;
+    letter-spacing: 0.05em;
   }
 }
