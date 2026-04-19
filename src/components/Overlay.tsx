@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 
 export default function Overlay() {
   return (
-    <div className="pointer-events-none absolute inset-0 z-10">
+    <div className="absolute inset-0 z-10" style={{ pointerEvents: "none" }}>
       {/* Логотип / название сверху */}
       <div className="absolute top-8 left-0 right-0 flex flex-col items-center gap-1">
         <motion.div
@@ -63,12 +63,68 @@ export default function Overlay() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.0 }}
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-full border"
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full border mb-6"
             style={{ borderColor: "var(--delina-gold)", background: "rgba(212,175,55,0.1)", backdropFilter: "blur(10px)" }}
           >
             <span className="text-xs md:text-sm font-semibold tracking-wider uppercase" style={{ color: "var(--delina-gold)" }}>
               +2000% биодоступность
             </span>
+          </motion.div>
+
+          {/* CTA-кнопки маркетплейсов */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 2.4 }}
+            className="flex flex-col sm:flex-row gap-3 justify-center"
+            style={{ pointerEvents: "auto" }}
+          >
+            <a
+              href="https://www.wildberries.ru/brands/311040405-delina-lab"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              style={{
+                background: "linear-gradient(135deg, #CB11AB, #a00d8c)",
+                color: "white",
+                fontFamily: "'Montserrat', sans-serif",
+                boxShadow: "0 4px 20px rgba(203,17,171,0.35)",
+              }}
+            >
+              <span>🛍</span>
+              Wildberries
+            </a>
+            <a
+              href="https://www.ozon.ru/search/?text=DELINA+LAB"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              style={{
+                background: "linear-gradient(135deg, #005bff, #0040cc)",
+                color: "white",
+                fontFamily: "'Montserrat', sans-serif",
+                boxShadow: "0 4px 20px rgba(0,91,255,0.35)",
+              }}
+            >
+              <span>🛒</span>
+              Ozon
+            </a>
+            <a
+              href="https://delinalab.ru/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-105"
+              style={{
+                background: "rgba(212,175,55,0.15)",
+                border: "1px solid rgba(212,175,55,0.6)",
+                color: "var(--delina-gold)",
+                fontFamily: "'Montserrat', sans-serif",
+                backdropFilter: "blur(10px)",
+              }}
+            >
+              <span>🌿</span>
+              Сайт бренда
+            </a>
           </motion.div>
         </motion.div>
       </div>
